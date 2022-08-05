@@ -1,0 +1,195 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  font-family: Montserrat, Helvetica, sans-serif;
+  background-color: red;
+  border: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: Montserrat, Helvetica, sans-serif;
+  background: rgb(63, 63, 63);
+  overflow-x: hidden;
+  width: 100vw;
+  color: white;
+}
+
+.header__image-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header__background-image {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.header__navigation-bar {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 290px;
+}
+
+.header__page-slogan {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  text-align: center;
+  background-color: transparent;
+  /* backdrop-filter: blur(15px);  On ajoutera une animation avec JS*/
+  width: 100%;
+}
+
+.header__page-slogan-title {
+  background-image: linear-gradient(90deg, #999999, #fbfbfb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-variant: small-caps;
+  font-weight: 800;
+  font-size: 84px;
+}
+
+.header__page-slogan-title-bar {
+  font-weight: 200;
+}
+
+.header__page-slogan-paragraph {
+  font-weight: 200;
+  font-size: 16px;
+  color: white;
+  font-variant: normal;
+  padding-bottom: 25px;
+}
+
+.header__unordered-list {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.underline {
+  width: 20px;
+  height: 1.5px;
+  background-color: #666668;
+}
+
+.header__scroll {
+  position: absolute;
+  background-color: transparent;
+  height: 50px;
+  width: 100%;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__scroll-arrow {
+  width: 50px;
+  height: 50px;
+  background-color: #111111;
+  border-radius: 100vmax;
+  outline: 1px solid #404040;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #111111;
+  border-top: 1px solid #575757;
+}
+
+.main__feel-the-road {}
+
+.main>* {
+  width: 60%;
+  border-left: 1px solid #575757;
+  border-right: 1px solid #575757;
+}
+
+.main__content-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.main__content-title>h2 {
+  font-weight: lighter;
+  font-size: 50px;
+}
+
+.main__content-title span {
+  font-weight: 800;
+}
+
+.main__image-container {
+  margin: 0 25px;
+}
+
+.main__text {
+  margin-left: 50px;
+}
+
+.main__text-and-image {
+  display: flex;
+}
+
+.main__text>h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.main__text>p {
+  font-weight: lighter
+}
+
+.main__text>button {
+  border: 1px solid white;
+  padding: 3px;
+}
+
+.main__image {
+  max-height: 500px;
+  max-width: 365px;
+}
