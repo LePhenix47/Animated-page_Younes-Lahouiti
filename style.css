@@ -1,3 +1,7 @@
+/*
+I'm not going to make such a big project without using SASS ever again, vanilla CSS sucks
+*/
+
 *,
 ::before,
 ::after {
@@ -69,19 +73,80 @@ body {
   width: 100%;
 }
 
+.header__page-slogan-title-container {
+  display: inline-block;
+  /*To make the container take the width of the heading*/
+}
+
+@keyframes typingEffect {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
 .header__page-slogan-title {
   background-image: linear-gradient(90deg, #999999, #fbfbfb);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  white-space: nowrap;
   font-variant: small-caps;
   font-weight: 800;
   font-size: 84px;
+  white-space: nowrap;
+  opacity: 1;
+  animation:
+    typingEffect 1s steps(18, end)forwards, fadeIn 1s forwards;
+
+  position: relative;
+}
+
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.25;
+  }
 }
 
 .header__page-slogan-title-bar {
   font-weight: 200;
+  position: absolute;
+  color: #f1f1f1;
+  top: 0px;
+  left: 100%;
+  animation-name:
+    blink;
+  animation-duration: 500ms;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
+
+
+
 
 .header__page-slogan-paragraph {
   font-weight: 200;
@@ -106,6 +171,7 @@ body {
 }
 
 .header__scroll {
+  margin-bottom: 50px;
   position: absolute;
   background-color: transparent;
   height: 50px;
@@ -137,14 +203,34 @@ body {
   border-top: 1px solid #575757;
 }
 
-.main>* {
+.main__content-container {
   width: 71.75%;
   border-left: 1px solid #575757;
   border-right: 1px solid #575757;
 }
 
+@keyframes moveUpAndFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .main__feel-the-road {
   height: 100vh;
+  animation-name: moveUpAndFadeIn;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-play-state: running;
+  animation-fill-mode: forwards;
 }
 
 .main__content-title {
@@ -210,7 +296,7 @@ body {
   position: relative;
   width: 175px;
   padding: 10px 20px;
-  margin: 0
+  margin: 20px 0 0 0;
 }
 
 .main__contact-us::after {
@@ -282,5 +368,4 @@ body {
 
 .main__models-image-container:nth-child(3) .main__models-image {
   object-position: center;
-
 }
