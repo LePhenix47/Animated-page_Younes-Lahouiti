@@ -15,7 +15,8 @@ I'm not going to make such a big project without using SASS ever again, vanilla 
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #696969;
+  background-color: transparent;
+  transition: background-color 3s ease-out;
   border-radius: 100vmax;
   border: 1px solid #4e4e4e;
 }
@@ -213,8 +214,7 @@ header {
   white-space: nowrap;
   opacity: 1;
   animation:
-    typingEffect 1s steps(18, end)forwards, fadeIn 1s forwards;
-
+    typingEffect 1s steps(18, end) forwards, fadeIn 1s forwards;
   position: relative;
 }
 
@@ -313,14 +313,13 @@ header {
 
 
 .main__content-container>*::selection {
-  color: orange
+  color: rgb(232, 151, 0)
 }
 
 
 @keyframes moveUpAndFadeIn {
   from {
     opacity: 0;
-    transform: translateY(-100%);
   }
 
   to {
@@ -331,13 +330,41 @@ header {
 
 .main__feel-the-road {
   height: 100vh;
+  transform: translateY(-10%);
+  opacity: 0;
   animation-name: moveUpAndFadeIn;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
+  animation-duration: 500ms;
+  animation-timing-function: ease-out;
   animation-delay: 1s;
   animation-iteration-count: 1;
   animation-direction: normal;
-  animation-play-state: running;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
+.main__text {
+  transform: translateY(-10%);
+  opacity: 0;
+  animation-name: moveUpAndFadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
+.main__image-container {
+  transform: translateY(-10%);
+  opacity: 0;
+  animation-name: moveUpAndFadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-delay: 1250ms;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-play-state: paused;
   animation-fill-mode: forwards;
 }
 
@@ -429,9 +456,50 @@ header {
   align-items: center;
   margin-bottom: 100px;
   transform: skew(2deg);
+  opacity: 0;
 }
 
-.main__browse-the-models--margin-sides {
+.main__models-car:nth-child(1) {
+  animation-name: unskewAndShowContainer;
+  animation-duration: 250ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+
+
+.main__models-car:nth-child(2) {
+  animation-name: unskewAndShowContainer;
+  animation-duration: 250ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+
+.main__models-car:nth-child(3) {
+  animation-name: unskewAndShowContainer;
+  animation-duration: 250ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+
+@keyframes unskewAndShowContainer {
+  from {
+    opacity: 0;
+    transform: skew(20deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: skew(2deg);
+  }
+}
+
+.main__side-borders {
   display: flex;
   flex-direction: column;
   justify-content: center;
