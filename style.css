@@ -72,6 +72,7 @@ html {
 
 img {
   cursor: none;
+  user-select: none;
 }
 
 .cursor {
@@ -312,7 +313,7 @@ header {
 }
 
 
-.main__content-container>*::selection {
+.main__content-container>*::selection:not(img) {
   color: rgb(232, 151, 0)
 }
 
@@ -591,6 +592,7 @@ For phones
     object-fit: cover;
     object-position: center;
   }
+
 
   .main__content-container {
     width: 80%;
