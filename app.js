@@ -89,6 +89,11 @@ function handleScrollSectionAnimations() {
     if (
       scrollTop <
       scrollTop - topViewportToCar.toFixed() + clientHeight * 0.75
+      /*
+      //So here's an explanation as how it works 
+      if the value of the top of our element is under the value of the top of our element - 
+      
+      */
     ) {
       browseTheModelsCar.style.animationPlayState = "running";
     } else {
